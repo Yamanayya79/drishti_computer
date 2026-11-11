@@ -305,6 +305,16 @@
    [['action','listStudents'],['token',token]].forEach(([n,v])=>{const i=document.createElement('input');i.name=n;i.value=v;f.appendChild(i);});
    document.body.appendChild(f);f.submit();f.remove();setStatus('Loading registrations…');
  });
+
+
+
+
+
+  alert(
+  "Registration Successful!\n\n" +
+  "Thank you for choosing Drishti Computer Education.\n" +
+  "Our admission team will contact you soon."
+);
  document.getElementById('createStudentForm').addEventListener('submit',()=>setStatus('Creating student login…'));
  window.addEventListener('message',e=>{
    if(e.source!==frame.contentWindow||!e.data||e.data.type!=='drishti-portal')return;
