@@ -1,0 +1,39 @@
+DRISHTI COMPUTER EDUCATION — LOGIN + REGISTRATION SETUP
+
+WEBSITE
+- index.html: responsive top navigation, Call Now button, Student/Admin login dialog, student dashboard and admin dashboard.
+- GoogleAppsScript.gs: backend for registrations, authentication and student account creation.
+
+IMPORTANT: UPDATE APPS SCRIPT BACKEND
+The current deployed backend only saves registrations. To activate the new login features:
+1. Open the Google Sheet > Extensions > Apps Script.
+2. Replace all Code.gs content with the new GoogleAppsScript.gs from this ZIP.
+3. In the code, change INITIAL_ADMIN_PASSWORD to a strong private password (at least 10 characters). Keep it secret.
+4. Save.
+5. In the function dropdown, select setupAdmin and click Run ONCE. Approve permissions.
+6. Deploy > Manage deployments > Edit (pencil) > Version: New version > Deploy.
+7. Keep the same Web App URL. The website already uses the Web App URL supplied in this conversation.
+
+ADMIN LOGIN
+- Login ID: admin (unless you change INITIAL_ADMIN_USERNAME before setup)
+- Password: the private password you set in INITIAL_ADMIN_PASSWORD.
+- Do not leave the sample password unchanged.
+
+CREATE STUDENT LOGIN
+1. Student submits the public registration form.
+2. Admin logs in to the website and clicks Load registrations.
+3. Use the student's Registration ID to create a login ID and temporary password.
+4. Share the login ID/password privately with that student.
+5. Student logs in and sees their name, registration ID, course and admission status.
+
+SHEETS
+- Student Registrations: admission enquiries.
+- Student Accounts: login IDs and salted password hashes. Do not share this sheet publicly.
+
+PUBLISH WEBSITE
+Replace index.html in the GitHub repository and commit the change.
+
+SECURITY NOTES
+- Use a unique strong admin password and change temporary student passwords before sharing.
+- Do not store or share plain-text passwords in the spreadsheet. The backend stores salted SHA-256 hashes.
+- This is a lightweight Apps Script portal. For production/high-volume use, use a dedicated authentication backend with stronger session controls, rate limiting, HTTPS hosting and account recovery.
