@@ -267,8 +267,8 @@
     }, 4000);
     waitWarningTimer = setTimeout(() => {
       if (waiting) {
-        message.className = 'form-message error';
-        message.textContent = 'This is taking longer than expected. Please wait a little longer and do not submit again.';
+        message.className = 'form-message';
+        message.textContent = 'Your details may still be saving. Please wait and do not submit again. If this message remains, contact the institute before retrying.';
       }
     }, 15000);
   });
